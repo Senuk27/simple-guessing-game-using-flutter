@@ -15,7 +15,8 @@ class WrongGuessPage extends StatelessWidget {
             const Text('Sorry! Wrong guess. Please try again.'),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/wrong', (route) => false);
               },
               child: const Text("Go Back"),
             ),
